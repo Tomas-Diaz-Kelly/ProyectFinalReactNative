@@ -1,11 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './src/Components/Header';
+import Home from './src/Screens/Home';
+import ItemListCategory from './src/Screens/ItemListCategory';
 
 export default function App() {
+  //Acá se manejará el estado para seleccionar una category y un producto
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style = {styles.container}>
+      <Header/>
+      <ItemListCategory/>
     </View>
   );
 }
@@ -13,8 +18,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  }
+})
