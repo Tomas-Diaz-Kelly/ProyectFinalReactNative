@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './src/Components/Header';
 import Home from './src/Screens/Home';
@@ -11,7 +11,7 @@ export default function App() {
   const [categorySelected, setCategorySelected] = useState("")
 
   const [fontsLoaded] = useFonts({
-    'Josefin': require('./src/Assets/Fonts/Josefin_Sans/JosefinSans-Regular.ttf')
+    'Josefin':require('./src/Assets/Fonts/Josefin_Sans/JosefinSans-Regular.ttf')
   });
 
   if (!fontsLoaded) {

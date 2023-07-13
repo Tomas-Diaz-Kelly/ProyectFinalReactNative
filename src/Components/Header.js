@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <View 
         style={styles.containerHeader}>
-      <Text style ={styles.text}>Header</Text>
+      <Text style ={styles.text}>BarberShop</Text>
     </View>
   )
 }
@@ -16,12 +16,12 @@ export default Header
 const styles = StyleSheet.create({
     containerHeader: {
         height: '10%',
-        backgroundColor: colors.peach,
+        backgroundColor: colors.gray,
         justifyContent: 'center',
         alignItems: 'center',
     },
     text: {
-        fontSize: 25,
+        fontSize: 35,
         fontFamily: 'Josefin'
     }
 })
