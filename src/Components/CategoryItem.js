@@ -4,13 +4,15 @@ import Card from './Card'
 
 const CategoryItem = ({
   item,
-  setCategorySelected
+  navigation
 }) => {
   return (
     <Pressable
-      onPress={()=>setCategorySelected(item)}
+      onPress={()=>navigation.navigate('ItemListCategory', {category: item})}
     >
-      <Card>
+      <Card
+        additionalStyle={styles.additionalStyle}
+      >
           <Text style={styles.textCategory}>{item}</Text>
       </Card>
     </Pressable>
@@ -21,6 +23,9 @@ export default CategoryItem
 
 const styles = StyleSheet.create({
     textCategory: {
-        fontSize: 18
+        fontSize: 20
+    },
+    additionalStyle: {
+      borderRadius: 18
     }
 })
