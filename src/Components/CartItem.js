@@ -22,7 +22,7 @@ export default CartItem;
 const styles = StyleSheet.create({
     card: {
         height: 100,
-        backgroundColor: colors.green,
+        backgroundColor: colors.gray,
         padding: 10,
         margin: 10,
         borderWidth: 2,
@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     text2: {
         fontFamily: "Josefin",
         fontSize: 14,
-        color: colors.blue,
+        color: colors.green,
     },
 });

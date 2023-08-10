@@ -4,6 +4,8 @@ import productsRaw from '../Data/products.json'
 import ProductItem from '../Components/ProductItem'
 import { colors } from '../Global/Colors'
 import Search from '../Components/Search'
+import { useSelector } from 'react-redux'
+import { useGetProductsByCategoryQuery } from '../Services/shopServices'
 
 const ItemListCategory = ({
   navigation,
@@ -11,18 +13,22 @@ const ItemListCategory = ({
 }) => {
 
   const {category} = route.params
+  //const productsSelected = useSelector (state => state.shopReducer.value.productsSelected)
+  const categorySelected = useSelector (state => state.shopReducer.value.categorySelected)
+  const {data: productsSelected, isError, isLoading} = useGetProductsByCategoryQuery(categorySelected)
 
-  console.log(category);
   const [products, setProducts] = useState([])
   const [keyword, setKeyword] = useState("")
   const [keywordError, setKeywordError] = useState("")
 
   useEffect(()=> {
     //Lógica de manejo de category
-    const productsFiltered = productsRaw.filter(product => product.category === category && product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
-    setProducts(productsFiltered)
+    if (productsSelected) {
+      const productsFiltered = productsSelected.filter(product => product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
+      setProducts(productsFiltered)
+    }
 
-  }, [category, keyword])
+  }, [productsSelected, keyword])
 
   const onSearch = (input) => {
     const expression = /^[a-zA-Z0-9\ ]*$/
@@ -62,7 +68,7 @@ export default ItemListCategory
 const styles = StyleSheet.create({
     container: {
         height: '100%',
-        backgroundColor: colors.white,
+        backgroundColor: colors.gray,
         alignItems: 'center'
     }
 })

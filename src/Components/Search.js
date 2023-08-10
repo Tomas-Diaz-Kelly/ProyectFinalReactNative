@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { colors } from '../Global/Colors';
-import { AntDesign } from '@expo/vector-icons';
 
 const Search = ({
     onSearch,
@@ -12,6 +11,11 @@ const Search = ({
 }) => {
     const [keyword, setKeyword] = useState("")
     const {width, height}  = useWindowDimensions()
+
+    const onErase = () => {
+        setKeyword("")
+        onSearch("")
+    }
 
   return (
     <View style ={width > 350 ? styles.container : styles.containerSm}>
@@ -23,12 +27,10 @@ const Search = ({
         <Pressable onPress={()=>onSearch(keyword)}>
             <FontAwesome name="search" size={24} color="black" />
         </Pressable>
-        <Pressable onPress={()=> setKeyword("")}>
+        <Pressable onPress={onErase}>
             <FontAwesome5 name="eraser" size={24} color="black" />
         </Pressable>
-        <Pressable onPress={goBack}>
-            <AntDesign name="back" size={24} color="black" />
-        </Pressable>
+        
        { error ?
          <Text>
             {error}
@@ -46,21 +48,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: '10%',
-        gap: 35,
+        gap: 18,
     },
     containerSm: {
-        height: '10%',
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        
+        height: '10%',
+        // gap: 18,
     },
     input: {
         width: 250,
-        padding: 5,
-        marginRight: 5,
+        padding: 8,
         fontSize: 18,
-        backgroundColor: colors.gray,
+        backgroundColor: colors.pink,
         borderRadius: 10,
     }
 })

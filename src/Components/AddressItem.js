@@ -1,33 +1,38 @@
-import { StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 import React from "react";
 import { colors } from "../Global/Colors";
 
-const OrderItem = ({ order }) => {
-    const total = order.items.reduce(
-        (acc, currentItem) => (acc += currentItem.price * currentItem.quantity),
-        0
-    );
+const AddressItem = ({ location, navigation }) => {
+
+    console.log(location);
+
+    const onChangeLocation = () => {
+        navigation.navigate('Location Selector')
+    }
 
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>
-                    {new Date(order.createdAt).toLocaleString()}
+                    {location.address}
                 </Text>
-                <Text style={styles.text2}>${total}</Text>
             </View>
-            <Feather name="search" size={30} color="black" />
+            <Pressable onPress={onChangeLocation}>
+                <Entypo name="location" size={30} color="black">
+                    <Text style={styles.text2}>Change</Text>
+                </Entypo>
+            </Pressable>
         </View>
     );
 };
 
-export default OrderItem;
+export default AddressItem;
 
 const styles = StyleSheet.create({
     card: {
         height: 100,
-        backgroundColor: colors.peach,
+        backgroundColor: colors.red,
         padding: 10,
         margin: 10,
         borderWidth: 2,
@@ -50,6 +55,6 @@ const styles = StyleSheet.create({
     text2: {
         fontFamily: "Josefin",
         fontSize: 19,
-        color: "gray",
+        color: colors.pink,
     },
 });
