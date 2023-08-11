@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: "josefin",
         fontSize: 18,
-        color: colors.gray,
+        color: colors.black,
     },
 });

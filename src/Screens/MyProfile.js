@@ -4,6 +4,7 @@ import AddButton from "../Components/AddButton";
 import * as ImagePicker from 'expo-image-picker'
 import { useSelector } from "react-redux";
 import { useGetProfileImageQuery } from "../Services/shopServices";
+import { colors } from "../Global/Colors";
 
 const MyProfile = ({navigation}) => {
     // const {profileImage, imageCamera} = useSelector(state => state.authReducer.value);
