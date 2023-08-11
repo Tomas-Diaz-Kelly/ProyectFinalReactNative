@@ -31,9 +31,10 @@ export default Home
 const styles = StyleSheet.create({
     wrapper: {
       gap: 20,
+      flexDirection:'column'
     },
     container: {
-        backgroundColor: colors.gray,
+        backgroundColor: colors.white,
         alignItems: 'center',
     },
     flatlist: {

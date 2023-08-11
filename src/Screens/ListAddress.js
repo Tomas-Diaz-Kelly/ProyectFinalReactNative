@@ -9,11 +9,6 @@ const ListAddress = ({ navigation }) => {
     const { location, localId } = useSelector((state) => state.userReducer.value);
     const {data: userLocationQuery, isError, isLoading} = useGetUserLocationQuery(localId)
 
-/*     console.log(userLocationQuery);
-
-    let locationQueryFormatted = {
-        location: userLocationQuery
-    } */
 
     return location?.latitude || userLocationQuery ? (
         <AddressItem 

@@ -43,7 +43,7 @@ export default Header;
 
 const styles = StyleSheet.create({
     containerHeader: {
-        backgroundColor: colors.peach,
+        backgroundColor: colors.white,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 25,
-        fontFamily: "Ubuntu",
+        fontFamily: "josefin",
     },
     pressable: {
         position: "absolute",

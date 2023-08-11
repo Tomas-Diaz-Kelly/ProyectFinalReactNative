@@ -12,7 +12,7 @@ const ItemListCategory = ({
   route
 }) => {
 
-  const {category} = route.params
+  
   //const productsSelected = useSelector (state => state.shopReducer.value.productsSelected)
   const categorySelected = useSelector (state => state.shopReducer.value.categorySelected)
   const {data: productsSelected, isError, isLoading} = useGetProductsByCategoryQuery(categorySelected)
@@ -68,7 +68,8 @@ export default ItemListCategory
 const styles = StyleSheet.create({
     container: {
         height: '100%',
-        backgroundColor: colors.gray,
-        alignItems: 'center'
+        backgroundColor: colors.white,
+        alignItems: 'center',
+        flexDirection: 'column',
     }
 })

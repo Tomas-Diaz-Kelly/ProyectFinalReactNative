@@ -32,7 +32,7 @@ export default AddressItem;
 const styles = StyleSheet.create({
     card: {
         height: 100,
-        backgroundColor: colors.red,
+        backgroundColor: colors.gray,
         padding: 10,
         margin: 10,
         borderWidth: 2,
@@ -55,6 +55,6 @@ const styles = StyleSheet.create({
     text2: {
         fontFamily: "Josefin",
         fontSize: 19,
-        color: colors.pink,
+        color: colors.gray,
     },
 });

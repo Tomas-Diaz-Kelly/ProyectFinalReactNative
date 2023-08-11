@@ -48,20 +48,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: '10%',
-        gap: 18,
+        gap: 35,
     },
     containerSm: {
-        flexDirection: 'column',
+        height: '10%',
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '10%',
-        // gap: 18,
+        
     },
     input: {
         width: 250,
-        padding: 8,
+        padding: 5,
         fontSize: 18,
-        backgroundColor: colors.pink,
+        backgroundColor: colors.white,
         borderRadius: 10,
     }
 })

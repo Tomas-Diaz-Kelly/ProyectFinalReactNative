@@ -5,7 +5,7 @@ import { colors } from "../Global/Colors";
 const AddButton = ({
     title = "",
     onPress = () => {},
-    color = colors.pink,
+    color = colors.gray,
 }) => {
     return (
         <Pressable
@@ -23,14 +23,14 @@ const styles = StyleSheet.create({
     button: {
         width: "80%",
         borderWidth: 1,
-        backgroundColor: colors.pink,
+        backgroundColor: colors.gray,
         justifyContent: "center",
         alignItems: "center",
         padding: 8
     },
     text: {
-        fontFamily: "Ubuntu",
+        fontFamily: "josefin",
         fontSize: 18,
-        color: colors.lightPink,
+        color: colors.gray,
     },
 });

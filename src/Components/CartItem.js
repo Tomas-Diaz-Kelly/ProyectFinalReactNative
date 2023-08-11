@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: "Josefin",
         fontSize: 19,
-        color: colors.red,
+        color: colors.white,
     },
     text2: {
         fontFamily: "Josefin",
