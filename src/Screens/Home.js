@@ -9,6 +9,24 @@ const Home = ({
   navigation
 }) => {
   const {data: categories, isLoading, isError} = useGetCategoriesQuery()
+
+  if (isLoading) {
+    return (
+      <View style={styles.container}>
+        <Text>Cargando...</Text>
+      </View>
+    );
+  }
+console.log(isLoading);
+  if (isError) {
+    return (
+      <View style={styles.container}>
+        <Text>Error al cargar los datos.</Text>
+      </View>
+    );
+  }
+  console.log(isError);
+
   
   return (
     <View style={styles.container}>
