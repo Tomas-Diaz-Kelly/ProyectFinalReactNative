@@ -114,7 +114,7 @@ export default TabNavigator
 
 const styles = StyleSheet.create({
     tabBar: {
-        backgroundColor: colors.pink,
+        backgroundColor: colors.gray,
         shadowColor: "black",
         height: 60,
     }
