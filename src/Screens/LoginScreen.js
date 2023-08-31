@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.gray,
+        backgroundColor: colors.white,
         gap: 15,
         paddingVertical: 20,
         borderRadius: 10,
