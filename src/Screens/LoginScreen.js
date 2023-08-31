@@ -51,8 +51,7 @@ const LoginScreen = ({ navigation }) => {
                         localId: resultSignIn.data.localId,
                         email: resultSignIn.data.email,
                     })
-                    console.log('Session inserted: ');
-                    console.log(response);
+                    
 
                     dispatch(setUser({
                         email: resultSignIn.data.email,

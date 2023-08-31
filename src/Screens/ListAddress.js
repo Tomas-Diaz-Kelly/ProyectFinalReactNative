@@ -31,6 +31,7 @@ export default ListAddress;
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'flex-start',
+        
         alignItems: 'center'
     },
     text: {
