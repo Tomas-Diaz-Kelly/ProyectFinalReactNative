@@ -4,7 +4,7 @@ El proyecto es un Ecommerce , es una App donde podes comprar una amplia variedad
 
 ## Características
 
-1.Navegación:Estoy utilizando React Navigation para manejar la navegación en tu aplicación.  (@react-navigation/bottom-tabs) (@react-navigation/native-stack).
+1.Navegación:Estoy utilizando React Navigation para manejar la navegación en mi aplicación.  (@react-navigation/bottom-tabs) (@react-navigation/native-stack).
 
 2.Gestión de Estado: Estoy utilizando Redux Toolkit para la gestión de estado en mi App.
 
