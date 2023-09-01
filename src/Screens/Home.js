@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { BackHandler, FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../Global/Colors'
 import CategoryItem from '../Components/CategoryItem'
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     flatlist: {
-      width: '80%'
+      width: '80%',
+      backgroundColor:colors.white
     }
 })

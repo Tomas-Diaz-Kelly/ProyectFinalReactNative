@@ -7,10 +7,7 @@ import { useSignUpMutation } from "../Services/authServices";
 import { useDispatch } from "react-redux";
 import { setUser } from "../Features/User/userSlice";
 import { isAtLeastSixCharacters, isValidEmail } from "../Validations/auth";
-/* import { useSignUpMutation } from "../services/authService";
-import { useDispatch } from "react-redux";
-import { setUser } from "../features/auth/authSlice";
-import { signupSchema } from "../validations/singupSchema"; */
+
 
 const SignupScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");

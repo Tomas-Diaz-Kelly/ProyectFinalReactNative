@@ -45,7 +45,7 @@ const LoginScreen = ({ navigation }) => {
                 if(resultSignIn.isSuccess) {
 
                     //Insert session in SQLite database
-                    console.log('inserting Session');
+                    
                     const response = await insertSession({
                         idToken: resultSignIn.data.idToken,
                         localId: resultSignIn.data.localId,
