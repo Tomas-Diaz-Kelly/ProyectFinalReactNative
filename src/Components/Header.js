@@ -1,11 +1,11 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { colors } from "../Global/Colors";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../Features/User/userSlice";
 import { deleteSession } from "../SQLite";
+import { Appearance } from 'react-native-appearance'; // Importa Appearance
 
 const Header = ({ route, navigation }) => {
     let title;
@@ -17,21 +17,30 @@ const Header = ({ route, navigation }) => {
     const dispatch = useDispatch();
     const { email, localId } = useSelector((state) => state.userReducer.value);
 
+    // Obtén el esquema de color actual del sistema
+    const colorScheme = Appearance.getColorScheme(); // 'light' o 'dark'
+
+    // Define estilos de acuerdo al esquema de color
+    const headerStyles = {
+        backgroundColor: colorScheme === 'dark' ? colors.darkBackground : colors.white,
+        color: colorScheme === 'dark' ? colors.lightText : colors.darkText,
+    };
+
     const onSignout = async () => {
         try {
             console.log("Deleting session...");
-            const response = await deleteSession(localId)
-            console.log("Session deleted: ")
-            console.log(response)
-            dispatch(signOut())
+            const response = await deleteSession(localId);
+            console.log("Session deleted: ");
+            console.log(response);
+            dispatch(signOut());
         } catch (error) {
-            console.log('Error while sign out:')
+            console.log("Error while sign out:");
             console.log(error.message);
         }
-    }
+    };
 
     return (
-        <View style={styles.containerHeader}>
+        <View style={[styles.containerHeader, headerStyles]}>
             <Text style={styles.text}>{title}</Text>
             {navigation.canGoBack() ? (
                 <Pressable
@@ -57,7 +66,6 @@ export default Header;
 
 const styles = StyleSheet.create({
     containerHeader: {
-        backgroundColor: colors.white,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",

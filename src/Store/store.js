@@ -1,5 +1,5 @@
-import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
-import counterReducer from '../Features/Counter/counterSlice'
+import {configureStore} from '@reduxjs/toolkit'
+import counterReducer from '../Features/Counter/CounterSlice'
 import shopReducer from '../Features/Shop/shopSlice'
 import cartReducer from '../Features/Cart/cartSlice'
 import userReducer from '../Features/User/userSlice'

@@ -4,7 +4,7 @@ import { colors } from "../Global/Colors";
 import { Entypo } from "@expo/vector-icons";
 
 const CartItem = ({ cartItem }) => {
-    console.log(cartItem);
+    
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
