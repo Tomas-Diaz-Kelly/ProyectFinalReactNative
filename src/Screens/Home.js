@@ -24,7 +24,7 @@ const Home = ({
       </View>
     );
   }
-  console.log(isError);
+  
 
   
   return (
@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
     },
     flatlist: {
       width: '80%',
-      backgroundColor:colors.white
+      backgroundColor:colors.white,
     }
 })
