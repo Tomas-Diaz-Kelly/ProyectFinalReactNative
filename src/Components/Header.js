@@ -5,7 +5,7 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../Features/User/userSlice";
 import { deleteSession } from "../SQLite";
-import { Appearance } from 'react-native-appearance'; // Importa Appearance
+//import { Appearance } from 'react-native-appearance'; // Importa Appearance
 
 const Header = ({ route, navigation }) => {
     let title;
@@ -18,14 +18,15 @@ const Header = ({ route, navigation }) => {
     const { email, localId } = useSelector((state) => state.userReducer.value);
 
     // Obtén el esquema de color actual del sistema
-    const colorScheme = Appearance.getColorScheme(); // 'light' o 'dark'
+    //const colorScheme = Appearance.getColorScheme(); // 'light' o 'dark'
 
     // Define estilos de acuerdo al esquema de color
+    /*
     const headerStyles = {
         backgroundColor: colorScheme === 'dark' ? colors.darkBackground : colors.white,
         color: colorScheme === 'dark' ? colors.lightText : colors.darkText,
     };
-
+*/
     const onSignout = async () => {
         try {
             console.log("Deleting session...");
@@ -40,7 +41,7 @@ const Header = ({ route, navigation }) => {
     };
 
     return (
-        <View style={[styles.containerHeader, headerStyles]}>
+        <View style={[styles.containerHeader]}>
             <Text style={styles.text}>{title}</Text>
             {navigation.canGoBack() ? (
                 <Pressable
